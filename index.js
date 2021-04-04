@@ -2,6 +2,8 @@ const express = require("express");
 
 const mongoose = require("mongoose");
 
+const Routes = require("./src/routes");
+
 const app = express();
 
 const port = 3333;
@@ -15,6 +17,12 @@ try {
   console.log("err ", error);
 }
 
+app.get("/", (req, res) => res.json({ test: "hello" }));
+
+app.use(express.json());
+
+app.use(Routes);
+
 app.listen(port, () => {
-  console.log("server is running⚡️");
+  console.log(`server is running in localhost:${port}⚡️`);
 });
