@@ -1,12 +1,14 @@
 ## API Controle
 
-### comandos docker:
+### criação do docker:
 
 ```sh
 docker pull mongo
-docker run --name controle-mongo -d mongo
+docker run --name controle-mongo --publish 27017:27017 -d mongo
 ```
 
-#### anotações:
+### entrar no bash do mongo docker
 
-- porta do docker mongo 8081:8081
+```sh
+docker exec -it controle-mongo bash
+```
