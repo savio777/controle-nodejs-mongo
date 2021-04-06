@@ -21,7 +21,6 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   console.log("METHOD ", req.method);
-  console.log("test", req.body.test);
   return res.json({ test: "hello" });
 });
 
