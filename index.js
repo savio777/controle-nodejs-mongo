@@ -1,6 +1,6 @@
 const express = require("express");
-
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const Routes = require("./src/routes");
 
@@ -18,6 +18,7 @@ try {
 }
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   console.log("METHOD ", req.method);
